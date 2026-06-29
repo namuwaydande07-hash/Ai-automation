@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="We integrate AI into your existing ecosystem. Connect your ERP, CRM, and legacy systems with modern AI agents and automation layers." />
+  <title>AI Tech Stack & Platform Integrations | Seamless Connectivity</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0b0e14;
+      color: #eef2f6;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ----- NAVIGATION / MENU BAR (consistent) ----- */
+    .navbar {
+      background: #11161f;
+      padding: 1rem 0;
+      border-bottom: 1px solid #2a313c;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(6px);
+      background: rgba(11, 14, 20, 0.92);
+    }
+
+    .nav-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      font-size: 2rem;
+      color: #6c8cff;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #b7c9ff, #6c8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #c8d0dc;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #8aabff;
+    }
+
+    .nav-cta {
+      background: #6c8cff;
+      color: #0b0e14 !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: #5470e0 !important;
+      color: #fff !important;
+    }
+
+    /* pointer badge with required details */
+    .pointer-badge {
+      background: #1f2a3a;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      color: #a0b3d9;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      border: 1px solid #2f3b4e;
+      letter-spacing: 0.3px;
+    }
+
+    .pointer-badge i {
+      color: #6c8cff;
+      margin-right: 0.15rem;
+    }
+
+    .badge-sep {
+      color: #3d4a5e;
+      margin: 0 0.2rem;
+    }
+
+    /* ----- PAGE SPECIFIC ----- */
+
+    /* top section */
+    .page-top {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 1px solid #1f2835;
+    }
+
+    .page-top h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #ffffff, #b7c9ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-top .subhead {
+      font-size: 1.2rem;
+      color: #bcc7da;
+      max-width: 70%;
+    }
+
+    /* section headers */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #eef2f6;
+    }
+
+    .section-sub {
+      color: #b0c0d8;
+      font-size: 1.1rem;
+      max-width: 80%;
+      margin-bottom: 1.8rem;
+    }
+
+    .divider {
+      border: 0;
+      height: 1px;
+      background: #1f2835;
+      margin: 2.5rem 0;
+    }
+
+    /* integration ecosystem */
+    .ecosystem {
+      padding: 2.5rem 0 1.5rem;
+    }
+
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .ecosystem-card {
+      background: #131b26;
+      border-radius: 24px;
+      padding: 1.5rem 1.2rem;
+      border: 1px solid #26303e;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .ecosystem-card:hover {
+      border-color: #4e69b0;
+      transform: translateY(-4px);
+    }
+
+    .ecosystem-card i {
+      font-size: 2.4rem;
+      color: #6c8cff;
+      margin-bottom: 0.5rem;
+    }
+
+    .ecosystem-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      color: #d6e0f0;
+    }
+
+    .ecosystem-card .chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.6rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .chip {
+      background: #1f2a3a;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      color: #b0c4e0;
+      border: 1px solid #2f3b4e;
+    }
+
+    .custom-api-note {
+      background: #0f1822;
+      padding: 1.2rem 1.8rem;
+      border-radius: 40px;
+      border: 1px solid #2b384b;
+      margin-top: 1.2rem;
+      display: inline-block;
+      font-weight: 500;
+      color: #b7c9ff;
+    }
+
+    .custom-api-note i {
+      margin-right: 0.6rem;
+      color: #6c8cff;
+    }
+
+    /* security & tools */
+    .security-tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin: 2rem 0;
+    }
+
+    .security-box, .tools-box {
+      background: #111a24;
+      padding: 2rem 2.2rem;
+      border-radius: 32px;
+      border: 1px solid #26303e;
+    }
+
+    .security-box h3, .tools-box h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: #e4ebf5;
+    }
+
+    .security-box p, .tools-box p {
+      color: #b0c0d8;
+    }
+
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .tools-list span {
+      background: #1d2838;
+      padding: 0.3rem 1.4rem;
+      border-radius: 40px;
+      border: 1px solid #2f3b4e;
+      font-size: 0.9rem;
+      color: #c8d6ea;
+    }
+
+    .compliance-badge {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .compliance-badge span {
+      background: #0f1a26;
+      padding: 0.3rem 1.4rem;
+      border-radius: 40px;
+      border: 1px solid #2b384b;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #8aa5ff;
+    }
+
+    /* infographic */
+    .infographic {
+      background: #111b26;
+      padding: 2.5rem 2rem;
+      border-radius: 40px;
+      border: 1px solid #2b384b;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .infographic h3 {
+      font-size: 2rem;
+      margin-bottom: 1.8rem;
+      text-align: center;
+    }
+
+    .infographic-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .step {
+      background: #0f1822;
+      padding: 1.8rem 0.8rem;
+      border-radius: 28px;
+      border: 1px solid #26303e;
+    }
+
+    .step .step-num {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #6c8cff;
+      opacity: 0.5;
+    }
+
+    .step h4 {
+      font-size: 1.2rem;
+      margin: 0.5rem 0 0.2rem;
+      color: #e4ebf5;
+    }
+
+    .step p {
+      color: #a7b5ce;
+      font-size: 0.9rem;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: #1a2535;
+      border-radius: 48px;
+      padding: 2.8rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      border: 1px solid #2b384b;
+      margin: 2rem 0 3rem;
+    }
+
+    .cta-left h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .cta-left p {
+      color: #b0c0d8;
+      font-size: 1.1rem;
+    }
+
+    .btn-primary {
+      background: #6c8cff;
+      color: #0b0e14;
+      padding: 0.9rem 2.8rem;
+      border-radius: 60px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: #8aa5ff;
+      transform: scale(1.02);
+      box-shadow: 0 8px 28px rgba(108, 140, 255, 0.25);
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .page-top .subhead {
+        max-width: 100%;
+      }
+      .security-tools-grid {
+        grid-template-columns: 1fr;
+      }
+      .infographic-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+      .cta-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .pointer-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-flex {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 1rem 1.2rem;
+      }
+      .pointer-badge {
+        justify-content: center;
+        font-size: 0.65rem;
+      }
+      .page-top h1 {
+        font-size: 2.2rem;
+      }
+      .logo-text {
+        font-size: 1.2rem;
+      }
+      .infographic-steps {
+        grid-template-columns: 1fr;
+      }
+      .ecosystem-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- MENU BAR (with pointer details) -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="logo-area">
+        <i class="fas fa-robot logo-icon"></i>
+        <span class="logo-text">AI·Automation</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Solutions</a>
+        <a href="2.html">Technology</a>
+        <a href="3.html">Case Studies</a>
+        <a href="4.html">Blog</a>
+        <a href="5.html" class="nav-cta">Contact</a>
+        <!-- Pointer with required details -->
+        <div class="pointer-badge">
+          <i class="fas fa-user-graduate"></i>
+          <span>Namrata Waydande</span>
+          <span class="badge-sep">|</span>
+          <span>KBP</span>
+          <span class="badge-sep">|</span>
+          <span>Ai software development</span>
+          <span class="badge-sep">|</span>
+          <span><i class="far fa-calendar-alt"></i> 29 June 2026</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+    <!-- TOP OF PAGE -->
+    <section class="page-top container">
+      <h1>Your Technology. Amplified by AI.</h1>
+      <p class="subhead">We are platform-agnostic. We work with what you have to ensure a seamless transition into the age of intelligence.</p>
+    </section>
+
+    <!-- INTEGRATION ECOSYSTEM -->
+    <section class="ecosystem container">
+      <h2 class="section-title">We Connect Everything.</h2>
+      <p class="section-sub">The biggest failure point in automation is the "data silo." Our architecture ensures that every system in your business communicates fluently.</p>
+
+      <div class="ecosystem-grid">
+        <!-- CRMs -->
+        <div class="ecosystem-card">
+          <i class="fas fa-folder-open"></i>
+          <h4>CRMs</h4>
+          <div class="chip-group">
+            <span class="chip">Salesforce</span>
+            <span class="chip">HubSpot</span>
+            <span class="chip">Zoho</span>
+            <span class="chip">Microsoft Dynamics</span>
+          </div>
+        </div>
+        <!-- ERPs -->
+        <div class="ecosystem-card">
+          <i class="fas fa-building"></i>
+          <h4>ERPs</h4>
+          <div class="chip-group">
+            <span class="chip">SAP</span>
+            <span class="chip">Oracle</span>
+            <span class="chip">NetSuite</span>
+          </div>
+        </div>
+        <!-- Productivity -->
+        <div class="ecosystem-card">
+          <i class="fas fa-comments"></i>
+          <h4>Productivity</h4>
+          <div class="chip-group">
+            <span class="chip">Slack</span>
+            <span class="chip">Microsoft Teams</span>
+            <span class="chip">Google Workspace</span>
+            <span class="chip">Outlook</span>
+          </div>
+        </div>
+        <!-- Cloud -->
+        <div class="ecosystem-card">
+          <i class="fas fa-cloud"></i>
+          <h4>Cloud</h4>
+          <div class="chip-group">
+            <span class="chip">AWS</span>
+            <span class="chip">Azure</span>
+            <span class="chip">Google Cloud</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-api-note">
+        <i class="fas fa-code"></i> Custom APIs: We can connect to virtually any REST / SOAP API.
+      </div>
+    </section>
+
+    <hr class="divider container" />
+
+    <!-- SECURITY + TECH STACK (two columns) -->
+    <section class="container">
+      <div class="security-tools-grid">
+        <!-- Security -->
+        <div class="security-box">
+          <h3><i class="fas fa-shield-alt" style="color:#6c8cff; margin-right: 10px;"></i>Enterprise-Grade Security</h3>
+          <p>We prioritize data privacy and governance. Our AI models can be deployed on your private cloud or on-premise, ensuring your sensitive data never leaves your control.</p>
+          <div class="compliance-badge">
+            <span>GDPR</span>
+            <span>HIPAA</span>
+            <span>SOC2</span>
+          </div>
+        </div>
+
+        <!-- Tools we use -->
+        <div class="tools-box">
+          <h3><i class="fas fa-tools" style="color:#6c8cff; margin-right: 10px;"></i>The Tools We Use</h3>
+          <p><strong>Languages:</strong></p>
+          <div class="tools-list">
+            <span>Python</span>
+            <span>R</span>
+            <span>Java</span>
+          </div>
+          <p style="margin-top: 1rem;"><strong>Frameworks:</strong></p>
+          <div class="tools-list">
+            <span>TensorFlow</span>
+            <span>PyTorch</span>
+            <span>LangChain</span>
+          </div>
+          <p style="margin-top: 1rem;"><strong>Automation:</strong></p>
+          <div class="tools-list">
+            <span>UiPath</span>
+            <span>Automation Anywhere</span>
+            <span>Microsoft Power Automate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFOGRAPHIC -->
+    <section class="container">
+      <div class="infographic">
+        <h3><i class="fas fa-project-diagram" style="color:#6c8cff; margin-right: 12px;"></i>The Automated Enterprise Journey</h3>
+        <div class="infographic-steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h4>Connect</h4>
+            <p>Data Ingestion</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h4>Analyze</h4>
+            <p>AI Processing</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h4>Automate</h4>
+            <p>Action / Execution</p>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <h4>Learn</h4>
+            <p>Feedback Loop</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="container">
+      <div class="cta-section">
+        <div class="cta-left">
+          <h2>Ready to integrate?</h2>
+          <p>Let's align your entire ecosystem.</p>
+        </div>
+        <a href="#" class="btn-primary"><i class="fas fa-microchip" style="margin-right: 8px;"></i> Schedule a Tech Audit</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- tiny JS (optional) -->
+  <script>
+    (function() {
+      console.log('Technology & Integration page — AI·Automation');
+      // any lightweight interaction can go here
+    })();
+  </script>
+</body>
+</html>

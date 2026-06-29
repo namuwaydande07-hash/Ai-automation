@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="See how we helped businesses save millions and save thousands of hours through AI and automation. Read our detailed success stories." />
+  <title>AI Case Studies | Real-World Automation Results</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0b0e14;
+      color: #eef2f6;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ----- NAVIGATION / MENU BAR (consistent) ----- */
+    .navbar {
+      background: #11161f;
+      padding: 1rem 0;
+      border-bottom: 1px solid #2a313c;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(6px);
+      background: rgba(11, 14, 20, 0.92);
+    }
+
+    .nav-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      font-size: 2rem;
+      color: #6c8cff;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #b7c9ff, #6c8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #c8d0dc;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #8aabff;
+    }
+
+    .nav-cta {
+      background: #6c8cff;
+      color: #0b0e14 !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: #5470e0 !important;
+      color: #fff !important;
+    }
+
+    /* pointer badge with required details */
+    .pointer-badge {
+      background: #1f2a3a;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      color: #a0b3d9;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      border: 1px solid #2f3b4e;
+      letter-spacing: 0.3px;
+    }
+
+    .pointer-badge i {
+      color: #6c8cff;
+      margin-right: 0.15rem;
+    }
+
+    .badge-sep {
+      color: #3d4a5e;
+      margin: 0 0.2rem;
+    }
+
+    /* ----- PAGE SPECIFIC ----- */
+
+    /* top section */
+    .page-top {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 1px solid #1f2835;
+    }
+
+    .page-top h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #ffffff, #b7c9ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-top .subhead {
+      font-size: 1.2rem;
+      color: #bcc7da;
+      max-width: 70%;
+    }
+
+    /* case study cards */
+    .case-studies {
+      padding: 3rem 0 2rem;
+    }
+
+    .case-card {
+      background: #111a24;
+      border-radius: 32px;
+      padding: 2.2rem 2.5rem;
+      border: 1px solid #26303e;
+      margin-bottom: 2.5rem;
+      transition: 0.2s;
+    }
+
+    .case-card:hover {
+      border-color: #4e69b0;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .case-tag {
+      display: inline-block;
+      background: #1d2838;
+      padding: 0.2rem 1.4rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #8aa5ff;
+      border: 1px solid #2f3b4e;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    .case-card h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #eef2f6;
+    }
+
+    .case-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2rem;
+      background: #0f1822;
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      margin: 0.8rem 0 1.2rem;
+      border: 1px solid #1f2835;
+    }
+
+    .case-meta strong {
+      color: #b7c9ff;
+      margin-right: 0.3rem;
+    }
+
+    .case-meta span {
+      color: #b0c0d8;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .case-block {
+      background: #0d1722;
+      padding: 1.2rem 1.5rem;
+      border-radius: 20px;
+      border-left: 4px solid #6c8cff;
+    }
+
+    .case-block.challenge {
+      border-left-color: #f08b8b;
+    }
+
+    .case-block.solution {
+      border-left-color: #7ae0a0;
+    }
+
+    .case-block h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #8899b5;
+      margin-bottom: 0.2rem;
+    }
+
+    .case-block p {
+      color: #c8d6ea;
+      font-size: 0.98rem;
+    }
+
+    .results-list {
+      background: #0d1722;
+      padding: 1.2rem 1.8rem;
+      border-radius: 20px;
+      border-left: 4px solid #f5c542;
+      margin-top: 1rem;
+    }
+
+    .results-list h4 {
+      color: #f5c542;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.4rem;
+    }
+
+    .results-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .results-list ul li {
+      padding: 0.2rem 0;
+      color: #d3def2;
+    }
+
+    .results-list ul li i {
+      color: #7ae0a0;
+      margin-right: 10px;
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: #1a2535;
+      border-radius: 48px;
+      padding: 2.8rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      border: 1px solid #2b384b;
+      margin: 2rem 0 3rem;
+    }
+
+    .cta-left h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .cta-left p {
+      color: #b0c0d8;
+      font-size: 1.1rem;
+    }
+
+    .btn-primary {
+      background: #6c8cff;
+      color: #0b0e14;
+      padding: 0.9rem 2.8rem;
+      border-radius: 60px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: #8aa5ff;
+      transform: scale(1.02);
+      box-shadow: 0 8px 28px rgba(108, 140, 255, 0.25);
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .page-top .subhead {
+        max-width: 100%;
+      }
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+      .cta-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .pointer-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
+      }
+      .case-card {
+        padding: 1.8rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-flex {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 1rem 1.2rem;
+      }
+      .pointer-badge {
+        justify-content: center;
+        font-size: 0.65rem;
+      }
+      .page-top h1 {
+        font-size: 2.2rem;
+      }
+      .logo-text {
+        font-size: 1.2rem;
+      }
+      .case-card h2 {
+        font-size: 1.6rem;
+      }
+      .case-meta {
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 0.8rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- MENU BAR (with pointer details) -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="logo-area">
+        <i class="fas fa-robot logo-icon"></i>
+        <span class="logo-text">AI·Automation</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Solutions</a>
+        <a href="2.html">Technology</a>
+        <a href="3.html">Case Studies</a>
+        <a href="4.html">Blog</a>
+        <a href="5.html" class="nav-cta">Contact</a>
+        <!-- Pointer with required details -->
+        <div class="pointer-badge">
+          <i class="fas fa-user-graduate"></i>
+          <span>Namrata Waydande</span>
+          <span class="badge-sep">|</span>
+          <span>KBP</span>
+          <span class="badge-sep">|</span>
+          <span>Ai software development</span>
+          <span class="badge-sep">|</span>
+          <span><i class="far fa-calendar-alt"></i> 29 June 2026</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+    <!-- TOP OF PAGE -->
+    <section class="page-top container">
+      <h1>Real Results. Real ROI.</h1>
+      <p class="subhead">Don't take our word for it. Here are the tangible results our clients achieved by trusting us with their AI transformation.</p>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section class="case-studies container">
+
+      <!-- Case Study 1: Finance -->
+      <div class="case-card">
+        <span class="case-tag"><i class="fas fa-building"></i> Finance Sector</span>
+        <h2>Saving 20,000 Man-Hours Per Year</h2>
+        <div class="case-meta">
+          <span><strong>Client:</strong> Multinational insurance company</span>
+          <span><strong>Challenge:</strong> Manual claims processing</span>
+        </div>
+        <div class="case-grid">
+          <div class="case-block challenge">
+            <h4><i class="fas fa-exclamation-triangle"></i> The Challenge</h4>
+            <p>Processing claims required manual verification of documents and data entry across 3 different systems.</p>
+          </div>
+          <div class="case-block solution">
+            <h4><i class="fas fa-lightbulb"></i> The Solution</h4>
+            <p>We implemented an RPA bot integrated with an AI OCR (Optical Character Recognition) system to extract data, cross-reference policy details, and approve claims.</p>
+          </div>
+        </div>
+        <div class="results-list">
+          <h4><i class="fas fa-chart-line"></i> The Results</h4>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> 80% reduction in processing time.</li>
+            <li><i class="fas fa-check-circle"></i> 40% decrease in human error.</li>
+            <li><i class="fas fa-check-circle"></i> Employee satisfaction increased as staff moved to customer-facing roles.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Case Study 2: Retail -->
+      <div class="case-card">
+        <span class="case-tag"><i class="fas fa-shopping-bag"></i> Retail Sector</span>
+        <h2>Increasing Sales by 25% Using Predictive Analytics</h2>
+        <div class="case-meta">
+          <span><strong>Client:</strong> E-commerce fashion retailer</span>
+          <span><strong>Challenge:</strong> Inventory waste &amp; trend prediction</span>
+        </div>
+        <div class="case-grid">
+          <div class="case-block challenge">
+            <h4><i class="fas fa-exclamation-triangle"></i> The Challenge</h4>
+            <p>High inventory waste and an inability to predict fashion trends quickly.</p>
+          </div>
+          <div class="case-block solution">
+            <h4><i class="fas fa-lightbulb"></i> The Solution</h4>
+            <p>We built a custom AI model that analyzed social media trends, historical sales, and weather patterns to predict demand.</p>
+          </div>
+        </div>
+        <div class="results-list">
+          <h4><i class="fas fa-chart-line"></i> The Results</h4>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Reduced overstock by 30%.</li>
+            <li><i class="fas fa-check-circle"></i> Increased conversion rates by 25% due to better stock availability.</li>
+            <li><i class="fas fa-check-circle"></i> Optimized supply chain logistics.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Case Study 3: Healthcare -->
+      <div class="case-card">
+        <span class="case-tag"><i class="fas fa-heartbeat"></i> Healthcare Sector</span>
+        <h2>Streamlining Patient Intake and Scheduling</h2>
+        <div class="case-meta">
+          <span><strong>Client:</strong> Large regional hospital network</span>
+          <span><strong>Challenge:</strong> Long wait times &amp; admin burnout</span>
+        </div>
+        <div class="case-grid">
+          <div class="case-block challenge">
+            <h4><i class="fas fa-exclamation-triangle"></i> The Challenge</h4>
+            <p>Long patient wait times and administrative burnout.</p>
+          </div>
+          <div class="case-block solution">
+            <h4><i class="fas fa-lightbulb"></i> The Solution</h4>
+            <p>Deployed an AI-powered scheduling agent to handle appointment bookings and automated pre-visit documentation.</p>
+          </div>
+        </div>
+        <div class="results-list">
+          <h4><i class="fas fa-chart-line"></i> The Results</h4>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Reduced patient wait times by 50%.</li>
+            <li><i class="fas fa-check-circle"></i> Reduced administrative overhead by 30%.</li>
+            <li><i class="fas fa-check-circle"></i> Improved patient satisfaction scores by 15%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA SECTION -->
+      <div class="cta-section">
+        <div class="cta-left">
+          <h2>Be Our Next Success Story.</h2>
+          <p>Let's discuss how we can create a case study for your business.</p>
+        </div>
+        <a href="#" class="btn-primary"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Contact Sales</a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- tiny JS (optional) -->
+  <script>
+    (function() {
+      console.log('Case Studies page — AI·Automation');
+      // any lightweight interaction can go here
+    })();
+  </script>
+</body>
+</html>

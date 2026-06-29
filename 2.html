@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore our AI and Automation services. We offer custom AI development, RPA, and intelligent data analytics to drive efficiency." />
+  <title>AI Solutions & Automation Services | Custom Implementation</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0b0e14;
+      color: #eef2f6;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ----- NAVIGATION / MENU BAR (identical style as page 1) ----- */
+    .navbar {
+      background: #11161f;
+      padding: 1rem 0;
+      border-bottom: 1px solid #2a313c;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(6px);
+      background: rgba(11, 14, 20, 0.92);
+    }
+
+    .nav-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      font-size: 2rem;
+      color: #6c8cff;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #b7c9ff, #6c8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #c8d0dc;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #8aabff;
+    }
+
+    .nav-cta {
+      background: #6c8cff;
+      color: #0b0e14 !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: #5470e0 !important;
+      color: #fff !important;
+    }
+
+    /* pointer badge with required details */
+    .pointer-badge {
+      background: #1f2a3a;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      color: #a0b3d9;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      border: 1px solid #2f3b4e;
+      letter-spacing: 0.3px;
+    }
+
+    .pointer-badge i {
+      color: #6c8cff;
+      margin-right: 0.15rem;
+    }
+
+    .badge-sep {
+      color: #3d4a5e;
+      margin: 0 0.2rem;
+    }
+
+    /* ----- PAGE SPECIFIC ----- */
+
+    /* top section */
+    .page-top {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 1px solid #1f2835;
+    }
+
+    .page-top h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #ffffff, #b7c9ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-top .subhead {
+      font-size: 1.2rem;
+      color: #bcc7da;
+      max-width: 70%;
+    }
+
+    /* service grid */
+    .services-section {
+      padding: 3rem 0 3rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-card {
+      background: #131b26;
+      border-radius: 28px;
+      padding: 2rem 2rem 2.2rem;
+      border: 1px solid #26303e;
+      transition: 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      border-color: #4e69b0;
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px -12px rgba(0, 0, 0, 0.6);
+    }
+
+    .service-card .service-icon {
+      font-size: 2.6rem;
+      color: #6c8cff;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #e4ebf5;
+    }
+
+    .service-card .problem {
+      background: #1d2838;
+      padding: 0.8rem 1rem;
+      border-radius: 16px;
+      border-left: 4px solid #f08b8b;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      color: #f0c8c8;
+    }
+
+    .service-card .solution {
+      background: #16212e;
+      padding: 0.8rem 1rem;
+      border-radius: 16px;
+      border-left: 4px solid #6c8cff;
+      margin-bottom: 1rem;
+      color: #c8d6ea;
+    }
+
+    .service-card .benefit {
+      background: #0d1a26;
+      padding: 0.8rem 1rem;
+      border-radius: 16px;
+      border-left: 4px solid #7ae0a0;
+      color: #b3e6c9;
+      font-weight: 500;
+      margin-top: auto;
+    }
+
+    .service-card .benefit i {
+      color: #7ae0a0;
+      margin-right: 6px;
+    }
+
+    .service-card .label {
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #8899b5;
+      margin-right: 6px;
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: #1a2535;
+      border-radius: 48px;
+      padding: 2.8rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      border: 1px solid #2b384b;
+      margin: 1rem 0 2rem;
+    }
+
+    .cta-left h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .cta-left p {
+      color: #b0c0d8;
+      font-size: 1.1rem;
+    }
+
+    .btn-primary {
+      background: #6c8cff;
+      color: #0b0e14;
+      padding: 0.9rem 2.8rem;
+      border-radius: 60px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: #8aa5ff;
+      transform: scale(1.02);
+      box-shadow: 0 8px 28px rgba(108, 140, 255, 0.25);
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+      .page-top .subhead {
+        max-width: 100%;
+      }
+      .cta-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .pointer-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-flex {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 1rem 1.2rem;
+      }
+      .pointer-badge {
+        justify-content: center;
+        font-size: 0.65rem;
+      }
+      .page-top h1 {
+        font-size: 2.2rem;
+      }
+      .logo-text {
+        font-size: 1.2rem;
+      }
+      .service-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- MENU BAR (with pointer details) -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="logo-area">
+        <i class="fas fa-robot logo-icon"></i>
+        <span class="logo-text">AI·Automation</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Solutions</a>
+        <a href="2.html">Technology</a>
+        <a href="3.html">Case Studies</a>
+        <a href="4.html">Blog</a>
+        <a href="5.html" class="nav-cta">Contact</a>
+        <!-- Pointer with required details -->
+        <div class="pointer-badge">
+          <i class="fas fa-user-graduate"></i>
+          <span>Namrata Waydande</span>
+          <span class="badge-sep">|</span>
+          <span>KBP</span>
+          <span class="badge-sep">|</span>
+          <span>Ai software development</span>
+          <span class="badge-sep">|</span>
+          <span><i class="far fa-calendar-alt"></i> 29 June 2026</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+    <!-- TOP OF PAGE -->
+    <section class="page-top container">
+      <h1>AI & Automation Solutions for Every Department</h1>
+      <p class="subhead">Technology is universal, but your business is unique. We customize automation and AI strategies for your specific industry and internal structure.</p>
+    </section>
+
+    <!-- SERVICE TABS (GRID) -->
+    <section class="services-section container">
+      <div class="service-grid">
+
+        <!-- Service 1: RPA -->
+        <div class="service-card">
+          <i class="fas fa-robot service-icon"></i>
+          <h3>Robotic Process Automation (RPA)</h3>
+          <div class="problem">
+            <span class="label"><i class="fas fa-exclamation-triangle"></i> The Problem:</span> 
+            Your team spends 40% of their time on data entry and administrative tasks.
+          </div>
+          <div class="solution">
+            <span class="label"><i class="fas fa-lightbulb"></i> The Solution:</span> 
+            We deploy software "robots" to handle high-volume, repetitive tasks (invoice processing, data migration, report generation) with 100% accuracy, 24/7.
+          </div>
+          <div class="benefit">
+            <i class="fas fa-check-circle"></i> <span class="label">Key Benefit:</span> Free up your human talent for strategic thinking.
+          </div>
+        </div>
+
+        <!-- Service 2: Predictive Analytics -->
+        <div class="service-card">
+          <i class="fas fa-chart-pie service-icon"></i>
+          <h3>Predictive Analytics &amp; AI Insights</h3>
+          <div class="problem">
+            <span class="label"><i class="fas fa-exclamation-triangle"></i> The Problem:</span> 
+            You are sitting on a mountain of data but lack the tools to understand it.
+          </div>
+          <div class="solution">
+            <span class="label"><i class="fas fa-lightbulb"></i> The Solution:</span> 
+            We build AI models that analyze historical data to predict future trends (customer churn, inventory needs, sales forecasts).
+          </div>
+          <div class="benefit">
+            <i class="fas fa-check-circle"></i> <span class="label">Key Benefit:</span> Make proactive decisions instead of reactive ones.
+          </div>
+        </div>
+
+        <!-- Service 3: Generative AI Integration -->
+        <div class="service-card">
+          <i class="fas fa-pen-fancy service-icon"></i>
+          <h3>Generative AI Integration</h3>
+          <div class="problem">
+            <span class="label"><i class="fas fa-exclamation-triangle"></i> The Problem:</span> 
+            Content creation, coding, and complex query responses are taking too long.
+          </div>
+          <div class="solution">
+            <span class="label"><i class="fas fa-lightbulb"></i> The Solution:</span> 
+            We integrate LLMs (Large Language Models) securely into your workflow to automate drafting, summarization, and code generation.
+          </div>
+          <div class="benefit">
+            <i class="fas fa-check-circle"></i> <span class="label">Key Benefit:</span> Accelerate your R&amp;D and marketing velocity.
+          </div>
+        </div>
+
+        <!-- Service 4: Custom AI Development -->
+        <div class="service-card">
+          <i class="fas fa-code service-icon"></i>
+          <h3>Custom AI Development</h3>
+          <div class="problem">
+            <span class="label"><i class="fas fa-exclamation-triangle"></i> The Problem:</span> 
+            Off-the-shelf software doesn't fit your niche.
+          </div>
+          <div class="solution">
+            <span class="label"><i class="fas fa-lightbulb"></i> The Solution:</span> 
+            We build bespoke machine learning models tailored to your proprietary data and unique business logic.
+          </div>
+          <div class="benefit">
+            <i class="fas fa-check-circle"></i> <span class="label">Key Benefit:</span> Create a proprietary "moat" that competitors cannot copy.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA SECTION -->
+      <div class="cta-section">
+        <div class="cta-left">
+          <h2>Which Solution is Right for You?</h2>
+          <p>Take our 2-minute assessment to get a personalized recommendation.</p>
+        </div>
+        <a href="#" class="btn-primary"><i class="fas fa-clipboard-list" style="margin-right: 8px;"></i> Take the Assessment</a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- tiny JS for interaction (optional) -->
+  <script>
+    (function() {
+      console.log('Solutions page — AI & Automation');
+      // subtle hover effect: just a placeholder
+      const cards = document.querySelectorAll('.service-card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          // nothing heavy
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
